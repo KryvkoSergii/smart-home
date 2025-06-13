@@ -1,0 +1,24 @@
+openapi: 3.1.0
+info:
+  title: Tasks management
+  description: Api for tasks management
+  version: 1.0.0
+servers:
+  - url: 'https'
+paths:
+  /v1/tasks:
+    get:
+      tags:
+        - Tag
+      summary: gets all list of tasks
+      responses:
+        '200':
+          description: successful operation
+
+
+components:
+  schemas:
+    Task:
+      type: object
+      properties:
+        room:
