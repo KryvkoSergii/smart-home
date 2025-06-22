@@ -1,0 +1,8 @@
+POST http://localhost:8080/api/command
+Content-Type: application/json
+Accept: application/json
+
+{
+  "command": "hello"
+}
+###
