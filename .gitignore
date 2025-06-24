@@ -11,3 +11,5 @@ out/
 
 # OS-specific
 .DS_Store
+
+.venv/

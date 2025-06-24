@@ -6,3 +6,29 @@ info:
 
 components:
   schemas:
+    Account:
+      type: object
+      required:
+        - id
+      properties:
+        id:
+          type: string
+          format: uuid
+
+    ErrorResponse:
+      type: object
+      required:
+        - errors
+      properties:
+        errors:
+          type: array
+          items:
+            $ref: '#/components/schemas/ErrorBase'
+
+    ErrorBase:
+      type: object
+      required:
+        - message
+      properties:
+        message:
+          type: string

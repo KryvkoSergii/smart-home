@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "auth-svc"
+version = "0.1.0"
+description = ""
+authors = ["Sergii <kryvkosergii@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.13"
+fastapi = "^0.115.13"
+uvicorn = "^0.34.3"
+datamodel-code-generator = "^0.31.2"
+pydantic = "^2.11.7"
+logging = "^0.4.9.6"
+sqlalchemy = "^2.0.41"
+aiosqlite = "^0.21.0"
+pydantic-settings = "^2.10.0"
+bcrypt = "^4.3.0"
+passlib = {extras = ["bcrypt"], version = "^1.7.4"}
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
