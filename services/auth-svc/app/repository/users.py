@@ -1,8 +1,8 @@
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select
-from repository.models import User
+from .models import User
 from sqlalchemy import select
-
+from uuid import uuid4
 
 class UserRepository:
     def __init__(self, session: AsyncSession):
@@ -19,6 +19,7 @@ class UserRepository:
         return user.scalar_one_or_none()
 
     async def create_user(self, user: User) -> User:
+        user.id = str(uuid4())
         self.db.add(user)
         await self.db.commit()
         await self.db.refresh(user)

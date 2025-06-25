@@ -4,6 +4,7 @@ build/
 out/
 !gradle/wrapper/gradle-wrapper.jar
 !gradle/wrapper/gradle-wrapper.properties
+__pycache__
 
 # IDEs
 .idea/
@@ -13,3 +14,7 @@ out/
 .DS_Store
 
 .venv/
+*.sqlite3
+.coverage
+*.db
+*.log

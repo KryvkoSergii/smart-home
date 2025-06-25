@@ -1,4 +1,6 @@
-Install dependencies
+# Auth and User service
+
+## Install dependencies
 ```bash
 poetry install
 ``` 
@@ -6,10 +8,22 @@ Active environment
 ```bash
 poetry shell
 ``` 
+## Generate DB Structure
+Apply DDL to DB
+```bash
+alembic upgrade head
+``` 
+Apply DDL to DB 
+```bash
+alembic upgrade head
+``` 
+To run the server:
+```bash
+poetry run .\app\main.py
+```
 
-Generate models:
+## Generate models:
 cd to `.\services\auth-svc`
-
 ```powershell
 python -m datamodel_code_generator `
     --input "..\..\shared\user-spec.yaml" `
@@ -30,4 +44,15 @@ python -m datamodel_code_generator `
     --target-python-version 3.13 `
     --use-standard-collections `
     --field-constraints
+```
+
+## Run test
+Run tests
+```bash
+ $env:PYTHONPATH=<dir>
+ pytest -v
+```
+Check code coverage
+```bash
+ pytest --cov=app
 ```

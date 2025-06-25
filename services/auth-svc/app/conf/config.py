@@ -3,7 +3,7 @@ from pydantic_settings import BaseSettings
 
 
 class Settings(BaseSettings):
-    SQLITE_FILE: str = "db.sqlite3"
+    SQLITE_FILE: str = "users.sqlite3"
 
     JWT_SECRET: str = "pryvit"
     JWT_ALGORITHM: str = "HS256"

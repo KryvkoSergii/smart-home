@@ -7,7 +7,6 @@ from services.users import UserService
 from logger import logger
 from services.accounts import AccountService
 from logger.logger import build_logger
-from uuid import uuid4
 
 router = APIRouter(prefix="/users", tags=["users"])
 logger = build_logger("user", "DEBUG")
@@ -43,7 +42,7 @@ async def register_new_user(
             detail="User with such username already exists",
         )
     
-    account = account_service.create_account(uuid4())
-    new_user = await user_service.create_user(user_data, account)
+    account = await account_service.create_account()
+    new_user = await user_service.register_new_user(user_data, account)
 
     return new_user

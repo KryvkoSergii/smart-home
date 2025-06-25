@@ -1,6 +1,6 @@
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select
-from repository.models import Account
+from .models import Account
 from uuid import UUID
 
 
@@ -9,7 +9,7 @@ class AccountRepository:
         self.db = session
 
     async def get_account_by_id(self, id: UUID) -> Account | None:
-        stmt = select(Account).filter_by(id=id)
+        stmt = select(Account).filter_by(id=str(id))
         account = await self.db.execute(stmt)
         return account.scalar_one_or_none()
 
